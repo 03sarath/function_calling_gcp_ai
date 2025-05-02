@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Food Recommendation System</h1>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('recommend') }}">
+                            <div class="mb-3">
+                                <label for="city" class="form-label">Enter your city</label>
+                                <input type="text" class="form-control" id="city" name="city" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Get Recommendation</button>
+                        </form>
+                    </div>
+                </div>
+
+                {% if recommendation %}
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Recommendation</h5>
+                        <p class="card-text">{{ recommendation.recommendation }}</p>
+                        <p class="card-text text-muted">{{ recommendation.reason }}</p>
+                        <form method="POST" action="{{ url_for('place_order') }}">
+                            <input type="hidden" name="food_name" value="{{ recommendation.recommendation }}">
+                            <button type="submit" class="btn btn-success">Place Order</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Favorite Foods</h5>
+                        <form method="POST" action="{{ url_for('get_favorites') }}">
+                            <button type="submit" class="btn btn-outline-primary mb-3">Show My Favorite Foods</button>
+                        </form>
+                        
+                        {% if favorite_foods %}
+                        <div class="list-group">
+                            {% for food in favorite_foods %}
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">{{ food.name }}</h6>
+                                        <small class="text-muted">Type: {{ food.type }} | Weather: {{ food.weather_condition }}</small>
+                                    </div>
+                                    <form method="POST" action="{{ url_for('place_order') }}" class="d-inline">
+                                        <input type="hidden" name="food_name" value="{{ food.name }}">
+                                        <button type="submit" class="btn btn-sm btn-success">Order</button>
+                                    </form>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if error %}
+                <div class="alert alert-danger mt-4" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

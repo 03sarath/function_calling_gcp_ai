@@ -1,0 +1,60 @@
+{
+    "favorite_foods": [
+        {
+            "name": "Biryani",
+            "weather_condition": "mild",
+            "spice_level": "high",
+            "cuisine": "indian",
+            "description": "Aromatic rice dish with meat and spices"
+        },
+        {
+            "name": "Masala Dosa",
+            "weather_condition": "hot",
+            "spice_level": "medium",
+            "cuisine": "south_indian",
+            "description": "Crispy rice crepe with spiced potato filling"
+        },
+        {
+            "name": "Sambar Rice",
+            "weather_condition": "rainy",
+            "spice_level": "medium",
+            "cuisine": "south_indian",
+            "description": "Rice with lentil-based vegetable stew"
+        },
+        {
+            "name": "Butter Chicken",
+            "weather_condition": "cold",
+            "spice_level": "medium",
+            "cuisine": "indian",
+            "description": "Creamy tomato-based curry with chicken"
+        },
+        {
+            "name": "Idli Sambar",
+            "weather_condition": "hot",
+            "spice_level": "mild",
+            "cuisine": "south_indian",
+            "description": "Steamed rice cakes with lentil stew"
+        },
+        {
+            "name": "Vada Pav",
+            "weather_condition": "mild",
+            "spice_level": "medium",
+            "cuisine": "indian",
+            "description": "Spicy potato fritter in a bun"
+        },
+        {
+            "name": "Rasam Rice",
+            "weather_condition": "cold",
+            "spice_level": "medium",
+            "cuisine": "south_indian",
+            "description": "Peppery soup with rice"
+        },
+        {
+            "name": "Pav Bhaji",
+            "weather_condition": "rainy",
+            "spice_level": "high",
+            "cuisine": "indian",
+            "description": "Spicy vegetable mash with bread"
+        }
+    ]
+} 
