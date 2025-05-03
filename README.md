@@ -48,23 +48,7 @@ GOOGLE_API_KEY=your_gemini_api_key
 ```bash
 python app.py
 ```
-
-6. Open a new terminal and navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-7. Install frontend dependencies:
-```bash
-npm install
-```
-
-8. Start the frontend development server:
-```bash
-npm start
-```
-
-9. Open your browser and navigate to `http://localhost:3000`
+6. Open your browser and navigate to `http://localhost:3000`
 
 ## Project Structure
 
@@ -74,13 +58,6 @@ food-recommendation-system/
 ├── weather_service.py     # Weather API service
 ├── food_preferences.json  # Food preferences data
 ├── requirements.txt       # Python dependencies
-├── frontend/             # Frontend application
-│   ├── src/
-│   │   ├── components/   # React components
-│   │   ├── styles/       # CSS styles
-│   │   └── App.js        # Main application
-│   ├── package.json      # Frontend dependencies
-│   └── public/           # Static files
 └── README.md             # This file
 ```
 
